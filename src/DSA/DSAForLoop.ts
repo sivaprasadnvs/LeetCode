@@ -36,3 +36,66 @@ function findNegativeNumbers(arr: number[]): number {
 
 const negativeCountResult = findNegativeNumbers(negativeArray)
 console.log(negativeCountResult)
+
+// write a function to return largest number inside an array
+
+const largArray = [ 3, 40, -20, 23, 99,1, 121]
+
+function getLargestInArray(arr: number[]): number {
+    let largest = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    return largest;
+}
+
+// write a function to return least number inside an array
+function getSmallestInArray(arr: number[]): number {
+    let smallest = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < smallest) {
+            smallest = arr[i];
+        }
+    }
+    return smallest;
+}   
+
+// write a function to return duplicate number inside an array without using set
+function findDuplicates(arr: number[]): number[] {
+    // Store values that are found more than once.
+    const duplicates: number[] = [];
+
+    // Select each value in the array.
+    for (let i = 0; i < arr.length; i++) {
+        // Compare it with every value that comes after it.
+        for (let j = i + 1; j < arr.length; j++) {
+            // A match means the selected value is duplicated.
+            if (arr[i] === arr[j]) {
+                // Add the duplicate value to the result.
+                duplicates.push(arr[i]);
+            }
+        }
+    }
+    return duplicates;
+}
+
+// write a function remove duplicate number inside an array without using set
+function removeDuplicates(arr: number[]): number[] {
+    const unique: number[] = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let isDuplicate = false;
+        for (let j = 0; j < unique.length; j++) {
+            if (arr[i] === unique[j]) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate) {
+            unique.push(arr[i]);
+        }
+    }
+    return unique;
+}
