@@ -1,4 +1,6 @@
 dist/
+.vite/
+coverage/
 node_modules/
 *.js
 *.js.map
@@ -8,6 +10,8 @@ node_modules/
 # Environment
 .env
 .env.local
+.env.*.local
+!.env.example
 
 # IDE
 .vscode/
