@@ -99,3 +99,78 @@ function removeDuplicates(arr: number[]): number[] {
     }
     return unique;
 }
+
+// Find second largest number in an array
+
+function getSecondLargest(arr: string | any[]) {
+    let largest = -Infinity
+    let secLargest = -Infinity
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            secLargest = largest
+            largest = arr[i];
+        }
+        else if (arr[i] > secLargest && arr[i] !== largest) {
+            secLargest = arr[i]
+        }
+       
+    }
+    return secLargest;
+}
+
+let arr = [4, 9, 0, 2, 8, 7, 1]
+
+let secondLrResult = getSecondLargest(arr)
+
+console.log(secondLrResult)
+
+
+// Write a function that returns the count of digits in a number
+function countDigits(num: number): number {
+    if (num === 0) return 1
+    num = Math.abs(num) // Convert to positive number to handle negative inputs
+    let count = 0
+    while (num > 0) {
+        num = Math.floor(num / 10)
+        count ++
+    }
+    return count
+}
+
+
+// write a function to check palindrome of a number using while loop with commets on how it works
+function isPalindrome(num: number): void {
+    let reverse = 0
+    let rem = 0
+    let initialNum = num
+    while (num > 0) {
+        rem = num % 10
+        reverse = rem + (10*reverse)
+        num = Math.floor(num/10)
+    }
+    if (reverse == initialNum) {
+        console.log("It is palindrome")
+    } else {
+        console.log("it is not Palindrome")
+    }
+
+}
+
+// write a function to reverse an integer
+function reverseInteger(num: number): number {
+    const sign = num < 0 ? -1 : 1;
+    num = Math.abs(num);
+    let reversed = 0;
+    while (num !== 0) {
+        reversed = reversed * 10 + num % 10;
+        num = Math.floor(num / 10);
+    }
+    return sign * reversed;
+}
+
+// Reverse an integer using string manipulation.
+function reverseIntegerWithString(num: number): number {
+    const sign = num < 0 ? "-" : "";
+    const reversedDigits = Math.abs(num).toString().split("").reverse().join("");
+    return Number(sign + reversedDigits);
+}
