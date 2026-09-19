@@ -35,3 +35,18 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
 
     return merged[middleIndex];
 }
+
+
+// write a function flattenArray that takes a nested array and returns a flattened version of it
+function flattenArray(arr: any[]): any[] {
+    const result: any[] = [];
+    for (const item of arr) {
+        if (Array.isArray(item)) {
+            result.push(...flattenArray(item));
+        } else {
+            result.push(item);
+        }
+    }
+    return result;
+}
+
