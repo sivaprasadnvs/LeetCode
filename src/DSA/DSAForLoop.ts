@@ -174,3 +174,66 @@ function reverseIntegerWithString(num: number): number {
     const reversedDigits = Math.abs(num).toString().split("").reverse().join("");
     return Number(sign + reversedDigits);
 }
+// other way to reverse an integer using string manipulation
+const getReverseNumber = (num: number) => {
+    let numCopy = num
+    let reverse = 0
+    num = Math.abs(num)
+    while (num > 0) {
+        reverse = reverse * 10 + num % 10
+        num = Math.floor(num/10)
+    }
+    let limit = Math.pow(2, 31) // or limit = 2**31
+if(reverse < - limit || reverse > limit-1 ) return 0
+    return numCopy < 0 ? -reverse : reverse
+}
+
+// Remove duplicates in decreasing order
+function removeDuplicatesInDecreasingOrder(arr: number[]): number[] {
+    const unique: number[] = [];
+    for (let i = 0; i < arr.length; i++) {
+        let isDuplicate = false;
+        for (let j = 0; j < unique.length; j++) {
+            if (arr[i] === unique[j]) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if (!isDuplicate) {
+            unique.push(arr[i]);
+        }
+    }
+    return unique.sort((a, b) => b - a);
+}
+
+
+// Remove duplciates in Decrecing order
+
+const removeDuplicatesDec = (num: number[]): number => {
+
+    let indexVar = 0
+    for (let i = 0; i < num.length; i++){
+        if (num[i] > num[indexVar]) {
+            indexVar = indexVar + 1
+            num[indexVar] = num[i]
+        }
+    }
+    return indexVar + 1
+}
+const inputDuplicateArray = [0, 0, 1, 2, 3, 4, 5, 5, 9, 9, 6,6]
+const resultDuplicate = removeDuplicatesDec(inputDuplicateArray)
+console.log(resultDuplicate)
+
+
+// Remove particular elements from array
+
+const removeElements = (num: number[], value: number): number => {
+    let indexVar = 0
+    for(let i = 0; i<num.length; i++) {
+        if (num[i] !== value) {
+            num[indexVar] = num[i]
+            indexVar = indexVar + 1
+}
+    }
+return indexVar + 1
+}
