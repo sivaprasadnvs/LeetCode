@@ -2,6 +2,17 @@
 
 A repository containing JavaScript solutions to LeetCode problems organized by difficulty level.
 
+## React Practice Lab
+
+The repository also includes a Vite-powered React workspace for interactive practice exercises.
+
+```bash
+npm install
+npm run dev
+```
+
+Use `npm run build` to type-check the app and create a production bundle.
+
 ## Structure
 
 This repository is organized as follows:

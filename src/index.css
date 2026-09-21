@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #19312d;
+  background: #f5f1e8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #19312d;
+  --muted: #6c7c74;
+  --line: #d9dfd2;
+  --paper: #fbfaf5;
+  --leaf: #b9d875;
+  --coral: #ed816c;
+  --deep: #315c4d;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at 90% 4%, #e2ebce 0, transparent 29%), #f5f1e8; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.shell { max-width: 1180px; margin: 0 auto; padding: 0 38px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 27px 0; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; gap: 11px; align-items: center; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: .02em; }
+.brand-mark { display: grid; place-items: center; width: 31px; height: 31px; background: var(--ink); color: var(--leaf); font: 500 12px 'DM Mono', monospace; }
+.topbar-note, .kicker, .eyebrow, .status, .result-label, .note-pin { font: 500 11px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .1em; }
+.topbar-note { color: var(--muted); }
+.hero { display: flex; align-items: flex-end; justify-content: space-between; min-height: 390px; padding: 85px 0 75px; }
+.kicker, .eyebrow { color: #a5614e; margin: 0 0 17px; }
+h1, h2, p { margin-top: 0; }
+h1 { max-width: 770px; margin-bottom: 24px; font-size: clamp(3.6rem, 8vw, 7.4rem); line-height: .89; letter-spacing: -.07em; font-weight: 600; }
+.hero-copy { max-width: 410px; color: var(--muted); line-height: 1.6; font-size: 15px; }
+.hero-stamp { display: flex; align-items: flex-end; gap: 11px; padding: 0 7px 6px 17px; color: var(--deep); border-left: 2px solid var(--coral); }
+.hero-stamp strong { font-size: 53px; line-height: .8; font-weight: 500; letter-spacing: -.07em; }
+.hero-stamp span { font: 11px 'DM Mono', monospace; line-height: 1.4; text-transform: uppercase; }
+.workspace { border-top: 1px solid var(--line); padding: 53px 0 83px; }
+.section-intro { display: flex; align-items: end; justify-content: space-between; margin-bottom: 27px; }
+.section-intro .eyebrow { margin-bottom: 10px; }
+.section-intro h2 { margin-bottom: 0; font-size: 29px; letter-spacing: -.04em; }
+.notes-toggle { border: 0; border-bottom: 1px solid var(--ink); background: transparent; color: var(--ink); padding: 5px 0; font-size: 13px; }
+.note-panel { display: flex; gap: 12px; max-width: 530px; margin: -5px 0 25px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.note-panel p { margin: 0; }
+.note-pin { display: grid; place-items: center; flex: 0 0 20px; height: 20px; border-radius: 50%; background: var(--leaf); color: var(--ink); font-size: 10px; }
+.card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; }
+.practice-card { min-height: 300px; padding: 29px; background: var(--paper); border: 1px solid var(--line); }
+.card-heading { display: flex; justify-content: space-between; gap: 15px; margin-bottom: 45px; }
+.card-heading .eyebrow { margin-bottom: 9px; font-size: 10px; }
+.card-heading h2 { margin-bottom: 9px; font-size: 23px; letter-spacing: -.04em; }
+.muted { max-width: 310px; margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+.status { align-self: start; padding: 7px 9px; color: var(--deep); background: #eaf0df; font-size: 9px; }
+.status.active { background: var(--leaf); }
+.array-row { display: flex; gap: 8px; padding-bottom: 17px; border-bottom: 1px solid var(--line); }
+.array-value { display: grid; place-items: center; width: 37px; height: 37px; background: #edf0e9; color: var(--deep); font: 500 13px 'DM Mono', monospace; }
+.array-value.selected { background: var(--coral); color: #fffaf1; }
+.control-row { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.control-row label { margin-right: auto; color: var(--muted); font-size: 12px; }
+.control-row input { width: 62px; border: 1px solid var(--line); background: transparent; padding: 9px; color: var(--ink); font: 13px 'DM Mono', monospace; }
+.primary-button { border: 0; padding: 10px 13px; background: var(--ink); color: #fffaf1; font-size: 12px; }
+.result { margin: 15px 0 0; color: #a5614e; font: 12px 'DM Mono', monospace; }
+.result-block { padding: 13px 0; border-bottom: 1px solid var(--line); }
+.result-block:last-child { border-bottom: 0; }
+.result-label { display: block; margin-bottom: 12px; color: var(--muted); font-size: 9px; }
+.number-list { display: flex; gap: 9px; color: var(--muted); font: 13px 'DM Mono', monospace; }
+.number-list span { min-width: 28px; }
+.accent-block { margin-top: 10px; padding: 17px; background: #eaf0df; border: 0; }
+.strong-list { color: var(--deep); font-weight: 500; }
+.footer { display: flex; justify-content: space-between; padding: 19px 0 28px; color: var(--muted); border-top: 1px solid var(--line); font: 10px 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; }
+@media (max-width: 720px) { .shell { padding: 0 20px; } .hero { display: block; min-height: 0; padding: 68px 0 63px; } h1 { font-size: clamp(3.5rem, 18vw, 6rem); } .hero-stamp { margin-top: 48px; width: fit-content; } .card-grid { grid-template-columns: 1fr; } .practice-card { padding: 23px; } .card-heading { margin-bottom: 34px; } .array-row { gap: 5px; } .array-value { width: 34px; } .control-row { flex-wrap: wrap; } .control-row label { flex-basis: 100%; } .footer { gap: 20px; line-height: 1.5; } }
