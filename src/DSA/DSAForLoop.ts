@@ -237,3 +237,21 @@ const removeElements = (num: number[], value: number): number => {
     }
 return indexVar + 1
 }
+
+// reverse a string
+const getStringReversed = (inputString: string) => {
+    const reverseString = inputString.split('').reverse().join('');
+    return reverseString
+}
+ //other way
+const reverseString = (s: string): string => {
+    let len = s.length
+    let halfLen = Math.floor(len / 2)
+    const chars = s.split('')
+    for (let i = 0; i < halfLen; i++){
+        let temp = chars[i];
+        chars[i] = chars[len - 1 - i]
+        chars[len - 1 - i] = temp
+    }
+    return chars.join('')
+}
