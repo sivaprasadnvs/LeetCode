@@ -275,3 +275,14 @@ return maxProfit
 const inputStock = [7, 1, 6, 9, 3, 4]
 const stockResult = getMaxProfit(inputStock)
 console.log(stockResult)
+
+// sorting of Arrays with m= some number of elements in it and return the sorted array
+
+const arr1 = [1, 5, 4, 0, 0, 2]
+const arr2 = [9, 2, 6, 4]
+
+const sortArrays = (arr1: number[], m: number, arr2: number[]): number[] => {
+    const mergedArray = [...arr1.slice(0, m), ...arr2]
+    return mergedArray.sort((a, b) => a - b)
+}
+
