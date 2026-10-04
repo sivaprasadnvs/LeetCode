@@ -255,3 +255,23 @@ const reverseString = (s: string): string => {
     }
     return chars.join('')
 }
+
+// Best time to buy and sell stock
+
+const getMaxProfit = (stock: number[]): number => {
+    let min = stock[0]
+    let maxProfit = 0
+    for (let i = 1; i < stock.length; i++) {
+        if (stock[i]- min > maxProfit) {
+            maxProfit = stock[i] - min
+        }
+        if (stock[i] < min) {
+            min = stock[i]
+        }
+    }
+return maxProfit
+}
+
+const inputStock = [7, 1, 6, 9, 3, 4]
+const stockResult = getMaxProfit(inputStock)
+console.log(stockResult)
