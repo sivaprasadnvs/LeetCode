@@ -286,3 +286,18 @@ const sortArrays = (arr1: number[], m: number, arr2: number[]): number[] => {
     return mergedArray.sort((a, b) => a - b)
 }
 
+//Move Zeros
+
+const moverZeros = (nums: number[]) => {
+    let x = 0;
+    for (let i = 0; i < nums.length; i++){
+        if (nums[i] !== 0) {
+            nums[x] = nums[i]
+            x++;
+        }
+    }
+    // Fill all the the elements to Zero
+    for (let i = x; i < nums.length; i++){
+        nums[i] = 0;
+    }
+}
