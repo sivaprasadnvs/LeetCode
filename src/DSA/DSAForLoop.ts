@@ -301,3 +301,33 @@ const moverZeros = (nums: number[]) => {
         nums[i] = 0;
     }
 }
+
+// Single number - All numbers will come two times but only one number as single time so find the Single number using for loop dont use any inbuilt function don't use XOR operator
+const singleNumArray = [4, 1, 2, 1, 2];
+const findSingleNumber = (nums: number[]): number => {
+    for (let i = 0; i < nums.length; i++) {
+        let isUnique = true;
+        for (let j = 0; j < nums.length; j++) {
+            if (i !== j && nums[i] === nums[j]) {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique) {
+            return nums[i];
+        }
+    }
+    return -1; // Return -1 if no unique number is found
+};
+console.log(findSingleNumber(singleNumArray)); // Output: 4
+
+// Single number - All numbers will come two times but only one number as single time so find the Single number using XOR operator
+const singleNumArrayXOR = [4, 1, 2, 1, 2];
+const findSingleNumberXOR = (nums: number[]): number => {
+    let result = 0;
+    for (const num of nums) {
+        result ^= num; // Using XOR to find the single number
+    }
+    return result; 
+};
+console.log(findSingleNumberXOR(singleNumArrayXOR)); // Output: 4
