@@ -331,3 +331,53 @@ const findSingleNumberXOR = (nums: number[]): number => {
     return result; 
 };
 console.log(findSingleNumberXOR(singleNumArrayXOR)); // Output: 4
+
+// Recursion
+// Sum of n numbers
+
+const findSumOfNumbers = (sumNumber: number): number => {
+    if (sumNumber === 0) return 0;
+    return sumNumber + findSumOfNumbers(sumNumber - 1);
+};
+
+const sumNumber = 5
+console.log(findSumOfNumbers(sumNumber))
+
+// Sum of all elements in an Array
+const findSumInArray = (sumArray: number[]): number => {
+    let sum = 0
+    for (let i = 0; i < sumArray.length; i++){
+        sum = sumArray[i] + sum
+    }
+    return sum
+}
+
+const sumArray = [5, 9, 9, 4, 6, 3]
+console.log(findSumInArray(sumArray))
+
+//Another way for sum of all elements in an Array using recursion
+const sum = (n: number): number => {
+    if (n == 0) {
+        return sumArray[n] 
+    } 
+    return sumArray[n] + sum(n-1)
+}
+
+console.log(sum(sumArray.length -1))
+
+// Sum of all Odd numbers in an array
+
+const initArray = [1, 2, 3, 6, 8, 9, 11]
+
+const findOddSum = (n: number): number => {
+    let isOdd = (initArray[n] % 2) !==0
+    if (n == 0) {
+        if (isOdd) {
+            return initArray[n]
+        } else {
+            return 0
+        }
+    }
+    
+    return ((isOdd ? initArray[n] : 0) + findOddSum(n-1))
+}
