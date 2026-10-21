@@ -381,3 +381,21 @@ const findOddSum = (n: number): number => {
     
     return ((isOdd ? initArray[n] : 0) + findOddSum(n-1))
 }
+
+// Find the factorial of the number
+
+const findFactorial = (n: number): number => {
+    if (n == 1) return 1;
+    return (n * findFactorial(n - 1))
+
+}
+
+const facNum = 5
+console.log(findFactorial(facNum))
+
+// Find number is power of 2 or not using recursion
+const isPowerOfTwo = (n: number): boolean => {
+    if (n < 1) return false;
+    if (n === 1) return true;
+    return n % 2 === 0 && isPowerOfTwo(n / 2);
+};
