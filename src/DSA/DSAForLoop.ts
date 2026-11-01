@@ -399,3 +399,10 @@ const isPowerOfTwo = (n: number): boolean => {
     if (n === 1) return true;
     return n % 2 === 0 && isPowerOfTwo(n / 2);
 };
+
+// Find Fibonacci of n number
+// f(n) = f(n-1) + f(n-2)
+const fibonacci = (n: number): number => {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
