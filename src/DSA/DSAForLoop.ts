@@ -275,3 +275,134 @@ return maxProfit
 const inputStock = [7, 1, 6, 9, 3, 4]
 const stockResult = getMaxProfit(inputStock)
 console.log(stockResult)
+
+// sorting of Arrays with m= some number of elements in it and return the sorted array
+
+const arr1 = [1, 5, 4, 0, 0, 2]
+const arr2 = [9, 2, 6, 4]
+
+const sortArrays = (arr1: number[], m: number, arr2: number[]): number[] => {
+    const mergedArray = [...arr1.slice(0, m), ...arr2]
+    return mergedArray.sort((a, b) => a - b)
+}
+
+//Move Zeros
+
+const moverZeros = (nums: number[]) => {
+    let x = 0;
+    for (let i = 0; i < nums.length; i++){
+        if (nums[i] !== 0) {
+            nums[x] = nums[i]
+            x++;
+        }
+    }
+    // Fill all the the elements to Zero
+    for (let i = x; i < nums.length; i++){
+        nums[i] = 0;
+    }
+}
+
+// Single number - All numbers will come two times but only one number as single time so find the Single number using for loop dont use any inbuilt function don't use XOR operator
+const singleNumArray = [4, 1, 2, 1, 2];
+const findSingleNumber = (nums: number[]): number => {
+    for (let i = 0; i < nums.length; i++) {
+        let isUnique = true;
+        for (let j = 0; j < nums.length; j++) {
+            if (i !== j && nums[i] === nums[j]) {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique) {
+            return nums[i];
+        }
+    }
+    return -1; // Return -1 if no unique number is found
+};
+console.log(findSingleNumber(singleNumArray)); // Output: 4
+
+// Single number - All numbers will come two times but only one number as single time so find the Single number using XOR operator
+const singleNumArrayXOR = [4, 1, 2, 1, 2];
+const findSingleNumberXOR = (nums: number[]): number => {
+    let result = 0;
+    for (const num of nums) {
+        result ^= num; // Using XOR to find the single number
+    }
+    return result; 
+};
+console.log(findSingleNumberXOR(singleNumArrayXOR)); // Output: 4
+
+// Recursion
+// Sum of n numbers
+
+const findSumOfNumbers = (sumNumber: number): number => {
+    if (sumNumber === 0) return 0;
+    return sumNumber + findSumOfNumbers(sumNumber - 1);
+};
+
+const sumNumber = 5
+console.log(findSumOfNumbers(sumNumber))
+
+// Sum of all elements in an Array
+const findSumInArray = (sumArray: number[]): number => {
+    let sum = 0
+    for (let i = 0; i < sumArray.length; i++){
+        sum = sumArray[i] + sum
+    }
+    return sum
+}
+
+const sumArray = [5, 9, 9, 4, 6, 3]
+console.log(findSumInArray(sumArray))
+
+//Another way for sum of all elements in an Array using recursion
+const sum = (n: number): number => {
+    if (n == 0) {
+        return sumArray[n] 
+    } 
+    return sumArray[n] + sum(n-1)
+}
+
+console.log(sum(sumArray.length -1))
+
+// Sum of all Odd numbers in an array
+
+const initArray = [1, 2, 3, 6, 8, 9, 11]
+
+const findOddSum = (n: number): number => {
+    let isOdd = (initArray[n] % 2) !==0
+    if (n == 0) {
+        if (isOdd) {
+            return initArray[n]
+        } else {
+            return 0
+        }
+    }
+    
+    return ((isOdd ? initArray[n] : 0) + findOddSum(n-1))
+}
+
+// Find the factorial of the number
+
+const findFactorial = (n: number): number => {
+    if (n == 1) return 1;
+    return (n * findFactorial(n - 1))
+
+}
+
+const facNum = 5
+console.log(findFactorial(facNum))
+
+// Find number is power of 2 or not using recursion
+const isPowerOfTwo = (n: number): boolean => {
+    if (n < 1) return false;
+    if (n === 1) return true;
+    return n % 2 === 0 && isPowerOfTwo(n / 2);
+};
+
+// Find Fibonacci of n number
+// f(n) = f(n-1) + f(n-2)
+const fibonacci = (n: number): number => {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}

@@ -50,3 +50,33 @@ function flattenArray(arr: any[]): any[] {
     return result;
 }
 
+// Max consecutive ones
+const conNum = [1,1,0,1,1,1]
+const findMaxConsecutiveOnes = (conNum: number[]): number => {
+    let currCount = 0
+    let maxCount =0
+    for (let i = 0; i < conNum.length; i++){
+        if (conNum[i] === 1) {
+            currCount++
+        } else {
+            maxCount = Math.max(currCount, maxCount)
+            currCount =0
+        }
+    }
+    return Math.max(currCount, maxCount)
+}
+
+// Missing number in the array
+const findArray = [0, 1, 3, 5, 2]
+const findMissingNumber = (findArray: number[]): number => {
+    let missingNumber = 0
+    let newFind = findArray.sort((a, b) => a - b)
+    for (let i = 0; i < newFind.length; i++) {
+        if (newFind[i] !== newFind[i - 1] + 1) {
+            missingNumber = newFind[i] - 1
+        }
+    }
+    return missingNumber
+}
+
+console.log(findMissingNumber(findArray))
